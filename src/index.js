@@ -1,14 +1,77 @@
-import './style.css';
-import _ from 'lodash';
+import "./style.css";
 
- function component() {
-   const element = document.createElement('div');
+const todoTasks = [
+  {
+    description: "To do 1",
+    completed: false,
+    index: 0,
+  },
+  {
+    description: "to do 2",
+    completed: true,
+    index: 1,
+  },
+  {
+    description: "to do 3",
+    completed: true,
+    index: 2,
+  },
+];
 
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-   element.classList.add('hello');
-   
-   return element;
- }
+document.addEventListener("DOMContentLoaded", () => {
+  const todoList = document.getElementById("todo_section");
 
- document.body.appendChild(component());
+  const form = document.createElement("form");
+  form.classList.add("form");
+
+  const header = document.createElement("div");
+  header.classList.add("header");
+  const heading = document.createElement("span");
+  heading.textContent = "Today's To Do";
+  header.appendChild(heading);
+  const reloadIcon = document.createElement("span");
+  reloadIcon.classList.add("material-symbols-outlined");
+  reloadIcon.textContent = "cached";
+  header.appendChild(reloadIcon);
+  const input = document.createElement("input");
+  input.classList.add("input");
+  input.placeholder = "Add to your list...";
+  form.appendChild(header);
+  form.appendChild(input);
+  todoList.appendChild(form);
+
+  const displayTodoList = () => {
+    const unorderedList = document.createElement("ul");
+    unorderedList.classList.add("unorderedList");
+
+    todoTasks.forEach((task) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("listItem");
+
+      const checkBox = document.createElement("span");
+      checkBox.classList.add("material-symbols-outlined");
+      checkBox.textContent = "check_box_outline_blank";
+
+      const description = document.createElement("p");
+      description.textContent = task.description;
+
+      const btnmore = document.createElement("span");
+      btnmore.classList.add("material-symbols-outlined");
+      btnmore.textContent = "more_vert";
+
+      listItem.appendChild(checkBox);
+      listItem.appendChild(description);
+      listItem.appendChild(btnmore);
+
+      unorderedList.appendChild(listItem);
+    });
+    todoList.appendChild(unorderedList);
+
+    const button = document.createElement("button");
+    button.classList.add("clear");
+    button.textContent = "Clear all complete";
+    todoList.appendChild(button);
+  };
+
+  displayTodoList();
+});

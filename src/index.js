@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const listItem = document.createElement("li");
       listItem.classList.add("listItem");
 
+      const descriptionSection = document.createElement("div");
+      descriptionSection.classList.add("descriptionSection");
+
       const checkBox = document.createElement("span");
       checkBox.classList.add("material-symbols-outlined");
       checkBox.textContent = "check_box_outline_blank";
@@ -59,8 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       btnmore.classList.add("material-symbols-outlined");
       btnmore.textContent = "more_vert";
 
-      listItem.appendChild(checkBox);
-      listItem.appendChild(description);
+      descriptionSection.appendChild(checkBox);
+      descriptionSection.appendChild(description);
+      listItem.appendChild(descriptionSection);
       listItem.appendChild(btnmore);
 
       unorderedList.appendChild(listItem);

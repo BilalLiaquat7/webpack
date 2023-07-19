@@ -43,6 +43,12 @@ body {
     width: 100%;
 }
 
+.descriptionSection {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .listItem {
     display: flex;
     justify-content: space-between;

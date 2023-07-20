@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const checkBox = document.createElement('span');
       checkBox.classList.add('material-symbols-outlined');
-      checkBox.textContent = task.completed ? 'check_box'  : 'check_box_outline_blank';
+      checkBox.textContent = task.completed ? 'check_box': 'check_box_outline_blank';
 
       const description = document.createElement('p');
       description.textContent = task.description;

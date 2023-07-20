@@ -86,7 +86,7 @@ git clone https://github.com/BilalLiaquat7/webpack.git
 
 - Navigate to the location of the folder in your machine:
 
-**`you@your-Pc-name:~$ cd desktop`**
+**`you@your-Pc-name:~$ cd webpack`**
 
 ### Install
 

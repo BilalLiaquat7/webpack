@@ -1,6 +1,6 @@
 import './style.css';
-import { addTodo, removeTodo, updateTodo } from './input';
-
+import { addTodo, removeTodo, updateTodo } from './input.js';
+// eslint-disable-next-line no-unused-vars
 export let todoTasks = [];
 
 export const CreateandGet = () => {

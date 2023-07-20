@@ -34,3 +34,15 @@ export const updateTodo = (e, index) => {
     displayTodoList();
   }
 };
+
+export const completed = (index) => {
+  const updatetodo = CreateandGet().map((item) => {
+    if (item.index === index) {
+      item.complete = true;
+    }
+    return item;
+  });
+  console.log(updatetodo)
+  storeData(updatetodo);
+//   displayTodoList();
+};

@@ -13,6 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  mode: 'development',
   module: {
     rules: [
       {

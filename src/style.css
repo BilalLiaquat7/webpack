@@ -2,6 +2,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -53,6 +55,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 12px;
 }
 
 .clear {

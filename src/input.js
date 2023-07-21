@@ -3,7 +3,7 @@ import {
   displayTodoList,
   CreateandGet,
   storeData,
-} from './index.js';
+} from "./index.js";
 
 export const addTodo = (description) => {
   const id = CreateandGet().length;
@@ -14,7 +14,7 @@ export const addTodo = (description) => {
 };
 
 export const removeTodo = (index) => {
-  const updatedTodo = CreateandGet().filter((item) => item.index != index);
+  const updatedTodo = CreateandGet().filter((item) => item.index !== index);
   updatedTodo.forEach((element, index) => {
     element.index = index + 1;
   });
@@ -23,7 +23,7 @@ export const removeTodo = (index) => {
 };
 
 export const updateTodo = (e, index) => {
-  if (e.keyCode == 13) {
+  if (e.keyCode === 13) {
     const updatetodo = CreateandGet().map((item) => {
       if (item.index === index) {
         item.description = e.target.textContent;
@@ -42,7 +42,7 @@ export const completed = (index) => {
     }
     return item;
   });
-  console.log(updatetodo)
+  console.log(updatetodo);
   storeData(updatetodo);
-//   displayTodoList();
+  //   displayTodoList();
 };

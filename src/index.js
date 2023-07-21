@@ -1,5 +1,5 @@
 import "./style.css";
-import { addTodo, removeTodo, updateTodo, completed } from "./input";
+import { addTodo, removeTodo, updateTodo, completed } from "./input.js";
 
 export let todoTasks = [];
 

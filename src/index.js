@@ -1,5 +1,11 @@
 import "./style.css";
-import { addTodo, removeTodo, updateTodo, completed } from "./input.js";
+import {
+  addTodo,
+  removeTodo,
+  updateTodo,
+  completed,
+  clearCompletedTodos,
+} from "./input.js";
 
 export let todoTasks = [];
 
@@ -47,6 +53,7 @@ unorderedList.classList.add("unorderedList");
 const button = document.createElement("button");
 button.classList.add("clear");
 button.textContent = "Clear all complete";
+button.addEventListener("click", () => clearCompletedTodos());
 
 export const displayTodoList = () => {
   todoTasks = CreateandGet();
@@ -62,9 +69,9 @@ export const displayTodoList = () => {
 
     const checkBox = document.createElement("input");
     checkBox.classList.add("material-symbols-outlined");
-    checkBox.checked = false;
+    checkBox.checked = task.complete ? true : false;
     checkBox.type = "checkbox";
-    checkBox.addEventListener("click", () => completed(index + 1))
+    checkBox.addEventListener("click", () => completed(index + 1));
 
     const description = document.createElement("p");
     description.textContent = task.description;

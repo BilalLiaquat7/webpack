@@ -3,7 +3,7 @@ import {
   displayTodoList,
   CreateandGet,
   storeData,
-} from "./index.js";
+} from './index.js';
 
 export const addTodo = (description) => {
   const id = CreateandGet().length;

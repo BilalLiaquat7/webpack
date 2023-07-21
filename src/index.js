@@ -1,6 +1,13 @@
 import './style.css';
-import { addTodo, removeTodo, updateTodo } from './input.js';
-// eslint-disable-next-line no-unused-vars
+
+import {
+  addTodo,
+  removeTodo,
+  updateTodo,
+  completed,
+  clearCompletedTodos,
+} from './input.js';
+
 export let todoTasks = [];
 
 export const CreateandGet = () => {
@@ -47,6 +54,7 @@ unorderedList.classList.add('unorderedList');
 const button = document.createElement('button');
 button.classList.add('clear');
 button.textContent = 'Clear all complete';
+button.addEventListener('click', () => clearCompletedTodos());
 
 export const displayTodoList = () => {
   todoTasks = CreateandGet();
@@ -60,11 +68,11 @@ export const displayTodoList = () => {
     const descriptionSection = document.createElement('div');
     descriptionSection.classList.add('descriptionSection');
 
-    const checkBox = document.createElement('span');
+    const checkBox = document.createElement('input');
     checkBox.classList.add('material-symbols-outlined');
-    checkBox.textContent = task.completed
-      ? 'check_box'
-      : 'check_box_outline_blank';
+    checkBox.checked = task.complete ? true : false;
+    checkBox.type = 'checkbox';
+    checkBox.addEventListener('click', () => completed(index + 1));
 
     const description = document.createElement('p');
     description.textContent = task.description;

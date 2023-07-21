@@ -34,3 +34,26 @@ export const updateTodo = (e, index) => {
     displayTodoList();
   }
 };
+
+export const completed = (index) => {
+  const updatetodo = CreateandGet().map((item) => {
+    if (item.index === index && item.complete === true) {
+      item.complete = false;
+    } else if (item.index === index) {
+      item.complete = true;
+    }
+    return item;
+  });
+  console.log(updatetodo);
+  storeData(updatetodo);
+  displayTodoList();
+};
+
+export const clearCompletedTodos = () => {
+  const updatetodo = CreateandGet().filter((item) => item.complete === false);
+  updatetodo.forEach((element, index) => {
+    element.index = index + 1;
+  });
+  storeData(updatetodo);
+  displayTodoList();
+};

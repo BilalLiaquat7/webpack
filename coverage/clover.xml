@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1690564458416" clover="3.2.0">
+  <project timestamp="1690564458416" name="All files">
+    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="6" coveredelements="6" complexity="0" loc="5" ncloc="5" packages="1" files="1" classes="1"/>
+    <file name="addTodo.js" path="E:\microverse\2nd 5 weeks\week 2\webpack\src\addTodo.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

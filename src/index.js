@@ -1,11 +1,12 @@
 import './style.css';
 import {
   addTodo,
-  removeTodo,
+  Addtodo,
   updateTodo,
   completed,
   clearCompletedTodos,
 } from './input.js';
+import { removeTodo } from './remove';
 
 export let todoTasks = [];
 
@@ -40,7 +41,7 @@ input.placeholder = 'Add to your list...';
 input.id = 'input';
 input.addEventListener('change', (e) => {
   e.preventDefault();
-  addTodo(e.target.value);
+  Addtodo(e.target.value);
   e.target.value = '';
 });
 

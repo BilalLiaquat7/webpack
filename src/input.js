@@ -3,22 +3,14 @@ import {
   displayTodoList,
   CreateandGet,
   storeData,
-} from './index.js';
+} from "./index.js";
+import { addTodo } from "./addTodo.js";
 
-export const addTodo = (description) => {
-  const id = CreateandGet().length;
-  const todo = { description, index: id + 1, complete: false };
+export const Addtodo = (description) => {
+  const todo = addTodo(description);
+  todo.index = CreateandGet().length + 1;
   todoTasks.push(todo);
   storeData(todoTasks);
-  displayTodoList();
-};
-
-export const removeTodo = (index) => {
-  const updatedTodo = CreateandGet().filter((item) => item.index !== index);
-  updatedTodo.forEach((element, index) => {
-    element.index = index + 1;
-  });
-  storeData(updatedTodo);
   displayTodoList();
 };
 
